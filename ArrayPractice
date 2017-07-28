@@ -1,0 +1,36 @@
+public class ArrayPractice {
+	public static void main(String[] args) {
+		String[] arr = { "Moe", "Larry", "Curly" };
+		boolean result = hasEqualLengthStrings(arr); // should be false.
+
+		String[] arr2 = { "ten", "ace" };
+		boolean result2 = hasEqualLengthStrings(arr2); // should be true.
+		
+		int[] arr3 = new int[12];
+	}
+
+	/**
+	 * Returns true if every string in strings has the same length and false
+	 * otherwise.
+	 * 
+	 * @param strings
+	 *            The array of Strings to check.
+	 * @return True if every String in strings has the same length and false
+	 *         otherwise.
+	 */
+	public static boolean hasEqualLengthStrings(String[] strings) {
+		for (int i = 0; i < strings.length; i++) {
+			String str = strings[i];
+			System.out.println(str + ": " + str.length());
+		}
+		
+		System.out.println("Do it again!");
+		
+		for (String str : strings) {
+			System.out.println(str + ": " + str.length());
+		}
+
+		return false;
+	}
+
+}
