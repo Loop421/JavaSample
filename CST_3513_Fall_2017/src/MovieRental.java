@@ -12,7 +12,7 @@ import java.util.Scanner;
 import java.io.*;
 
 public class MovieRental {
-    
+    //these are golbal varible allowing more than one method to use 
     static Scanner scan = new Scanner(System.in);
     static int select; 
     static boolean exit;
@@ -23,11 +23,12 @@ public class MovieRental {
     public static void getSelect() throws IOException
     {
         System.out.println();
-        printHeader();
+        printHeader(); // This would print out the nice header in printHeader method.
         System.out.println("Please select an option");
         System.out.println("1) Rent a movie");
         System.out.println("2) Movie return");
         System.out.println("0) Exit");
+        
         System.out.print("Enter your choice: ");
         select = scan.nextInt();
         
@@ -58,7 +59,7 @@ public class MovieRental {
         System.out.println("1) Comedy");
         System.out.println("2) Action");
         System.out.println("3) Drama");
-        System.out.println("0) Exit");
+        System.out.println("0) Exit"); //this may be remove as what we are aiming for wont need this.
         System.out.print("Enter your choice: ");
         select = scan.nextInt();
         
@@ -90,6 +91,7 @@ public class MovieRental {
         File file = new File("ComedyMoive.txt");
         Scanner input = new Scanner(file);
         
+        //check if the file exists
         try 
         {
           while (input.hasNext())
@@ -169,6 +171,9 @@ public class MovieRental {
         switch(select)
         {
             case 0:
+                // This would bring the user back to selecting a gener. 
+                // if they like what they saw on the list of moive or pick
+                // selected by mistake.
                 getGener();
                 break;
             case 1:
@@ -261,6 +266,9 @@ public class MovieRental {
     
     public static void main(String[] args) throws IOException
     {
+        // The program should start at the first and move to next method depending 
+        // on the user choices or exiting the program.
+        // the program would keep running until exit is selected.
         while(!exit)
         {
             getSelect();
